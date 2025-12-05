@@ -7,7 +7,6 @@ Este é o projeto "Django Alura Space", um aplicativo web desenvolvido com Djang
 
 ✨ Thiago, Django Alura Space
 🏷️ Tecnologias, Django, Python, Bootstrap, SQLite, Amazon S3
-[https://i.imgur.com/sua-imagem-de-capa.png#vitrinedev] 
 
 ---
 
