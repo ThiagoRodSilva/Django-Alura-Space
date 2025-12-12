@@ -1,6 +1,6 @@
-# Nome do meu projeto
+# Django-Alura-Space
 
-Rápida descrição do objetivo de fazer esse projeto
+Uma galeria de fotos do espaço feito durante as aulas da Alura!
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
