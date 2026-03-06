@@ -1,18 +1,14 @@
 #!/bin/bash
-set -e  # Para o script se qualquer comando falhar
+set -e  # para o script se algo falhar
 
-echo "📦 Atualizando pip..."
-python3 -m ensurepip --upgrade || true
-python3 -m pip install --upgrade pip
-
-echo "📦 Instalando dependências do requirements.txt..."
-python3 -m pip install -r requirements.txt
+echo "📦 Instalando dependências..."
+pip install -r requirements.txt
 
 echo "🔄 Rodando migrações..."
-python3 manage.py makemigrations --noinput
-python3 manage.py migrate --noinput
+python manage.py makemigrations --noinput
+python manage.py migrate --noinput
 
-echo "🎨 Coletando arquivos estáticos..."
-python3 manage.py collectstatic --noinput
+echo "🎨 Coletando estáticos..."
+python manage.py collectstatic --noinput
 
-echo "✅ Build concluído com sucesso!"
+echo "✅ Build concluído!"
