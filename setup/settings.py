@@ -89,7 +89,7 @@ AWS_STORAGE_BUCKET_NAME = str(os.getenv('AWS_STORAGE_BUCKET_NAME'))
 
 # Configurações globais (lidas pelo django-storages e boto3)
 AWS_S3_REGION_NAME = 'us-east-1'               # Região exigida pelo Tebi
-AWS_S3_SIGNATURE_VERSION = 's3v4'               # Assinatura versão 4
+AWS_S3_SIGNATURE_VERSION = 's3'                 # Assinatura versão 2 (compatível com Tebi sem erro de Content-Length)
 AWS_S3_ADDRESSING_STYLE = 'path'                # Estilo de endereçamento (path)
 AWS_S3_ENDPOINT_URL = 'https://s3.tebi.io'      # Endpoint do Tebi
 AWS_DEFAULT_ACL = 'public-read'                  # ACL padrão
