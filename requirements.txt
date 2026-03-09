@@ -2,11 +2,11 @@ asgiref==3.11.0
 boto3==1.41.5
 botocore==1.41.5
 dj-database-url==3.1.2
-Django==5.2.8
+Django==5.0.3
 django-storages==1.14.6
 jmespath==1.0.1
 pillow==12.0.0
-psycopg[binary]==3.2.5
+psycopg[binary]==3.3.3
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.1
 s3transfer==0.15.0
