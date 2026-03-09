@@ -1,4 +1,5 @@
 #!/bin/bash
-# Forcing redeploy
-python3.12 -m pip install -r requirements.txt --break-system-packages
+python3.12 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 python3.12 manage.py collectstatic --noinput
