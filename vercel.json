@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "functions": {
-    "setup/wsgi.py": {
-      "runtime": "python3.12"
+  "builds": [
+    {
+      "src": "setup/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "runtime": "python3.12" }
     }
-  },
+  ],
   "rewrites": [
     {
       "source": "/static/(.*)",
