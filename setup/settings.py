@@ -28,7 +28,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -107,7 +106,7 @@ STORAGES = {
         "OPTIONS": {
             "bucket_name": AWS_STORAGE_BUCKET_NAME,
             "endpoint_url": AWS_S3_ENDPOINT_URL,
-            "region_name": AWS_S3_REGION_NAME,
+            "region_name": AWS_S3_REGION_NAME, ==
             "signature_version": AWS_S3_SIGNATURE_VERSION,
             "default_acl": AWS_DEFAULT_ACL,
             "location": "media",                     # Arquivos de mídia salvos em /media/
@@ -115,12 +114,21 @@ STORAGES = {
         },
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
+        "OPTIONS": {
+            "bucket_name": AWS_STORAGE_BUCKET_NAME,
+            "endpoint_url": AWS_S3_ENDPOINT_URL,
+            "region_name": AWS_S3_REGION_NAME,
+            "signature_version": AWS_S3_SIGNATURE_VERSION,
+            "default_acl": AWS_DEFAULT_ACL,
+            "location": "static",                    # Arquivos estáticos salvos em /static/
+            "file_overwrite": AWS_S3_FILE_OVERWRITE,
+        },
     },
 }
 
-# URLs públicas
-STATIC_URL = '/static/'
+# URLs públicas (apontando diretamente para o bucket)
+STATIC_URL = f'{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}/static/'
 MEDIA_URL = f'{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}/media/'
 
 # Diretórios locais (necessários para collectstatic local)
