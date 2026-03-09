@@ -1,5 +1,10 @@
 {
   "version": 2,
+  "functions": {
+    "setup/wsgi.py": {
+      "runtime": "python3.12"
+    }
+  },
   "rewrites": [
     {
       "source": "/static/(.*)",
