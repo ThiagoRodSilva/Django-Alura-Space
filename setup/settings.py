@@ -106,7 +106,7 @@ STORAGES = {
         "OPTIONS": {
             "bucket_name": AWS_STORAGE_BUCKET_NAME,
             "endpoint_url": AWS_S3_ENDPOINT_URL,
-            "region_name": AWS_S3_REGION_NAME, ==
+            "region_name": AWS_S3_REGION_NAME,
             "signature_version": AWS_S3_SIGNATURE_VERSION,
             "default_acl": AWS_DEFAULT_ACL,
             "location": "media",                     # Arquivos de mídia salvos em /media/
